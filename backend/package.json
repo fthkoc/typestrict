@@ -1,0 +1,19 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "typestrict backend project",
+  "main": "app.js",
+  "scripts": {
+    "test": "node src/app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@typescript-eslint/typescript-estree": "^4.24.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "request": "^2.88.2",
+    "ts-file-parser": "0.0.21",
+    "typescript-parser": "^2.6.1"
+  }
+}

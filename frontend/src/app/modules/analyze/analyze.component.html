@@ -1,0 +1,55 @@
+<div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" class="stats-cards">
+	<mat-card fxFlex="50">
+		<!-- <button mat-raised-button color="primary" (click)="analyzeFile()">Perform Analysis on file at
+			config.json</button> -->
+		<app-widget-column [text]="'Result'" [categories]="analyzeResultChartCategories" [data]="analyzeResultChartData" [update]="analyzeResultChartUpdateFlag"></app-widget-column>
+	</mat-card>
+
+	<mat-card fxFlex="50">
+		<app-widget-gauge [text]="'Success Index'" [data]="analyzeResultGaugeData"></app-widget-gauge>
+	</mat-card>
+</div>
+
+<br>
+
+<div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" class="stats-cards">
+	<mat-card fxFlex="100">
+
+		<h2>Calculated Index: {{ calculated }}</h2>
+		<h3>Potential Index: {{ potential }}<span *ngIf="potential != calculated">, can be increased {{ potential - calculated}} by fixing errors listed:</span></h3>
+
+		<h5>Parsing Errors, Total: {{ parsingTotal }}, Passed: {{ parsingPassed }}, Errors: {{ parsingErrors.length }}</h5>
+
+		<ul *ngFor="let error of parsingErrors">
+			<li>
+				{{ error.message }}
+			</li>
+		</ul>
+
+		<br>
+
+		<h5>Code Quality Errors, Total: {{ codeQualityTotal }}, Passed: {{ codeQualityPassed }}, Errors: {{ codeQualityErrors.length }}</h5>
+
+		<ul *ngFor="let error of codeQualityErrors">
+			<li>
+				{{ error.message }}
+			</li>
+		</ul>
+
+		<br>
+
+		<h5>Code Standard Errors, Total: {{ codeStandardTotal }}, Passed: {{ codeStandardPassed }}, Errors: {{ codeStandardErrors.length }}</h5>
+		<ul *ngFor="let error of codeStandardErrors">
+			<li>
+				{{ error.message }}
+			</li>
+		</ul>
+
+		<h5>Time Passed: {{ timePassed }}</h5>
+
+	</mat-card>
+</div>
+
+<br>
+
+<pre>{{analyzeResult | json}}</pre>

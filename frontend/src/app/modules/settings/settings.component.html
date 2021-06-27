@@ -1,0 +1,23 @@
+<div>
+	<button mat-raised-button color="primary" (click)="setConfig()">Save</button>
+	|
+	<button mat-raised-button color="secondary" >Reset</button>
+</div>
+
+<br>
+
+<mat-divider></mat-divider>
+
+<br>
+
+<div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" class="stats-cards">
+	<textarea rows="100" cols="160" #configArea>         
+		{{config | json}}
+	</textarea>
+</div>
+
+
+
+
+
+

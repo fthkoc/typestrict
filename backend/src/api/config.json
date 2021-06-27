@@ -1,0 +1,68 @@
+{
+	"fileFullPath": "D:\\Work\\Software Projects\\typestrict_v4\\test\\test_demo.ts",
+	"fileDir": "D:\\Work\\Software Projects\\typestrict_v4\\test",
+	"resultPath": "D:\\Work\\Software Projects\\typestrict_v4\\result",
+	"rules": {
+		"duplicatingLibraryNames": {
+			"check": true,
+			"category": "Code Quality",
+			"weight": 2
+		},
+		"duplicatingSpecifiers": {
+			"check": true,
+			"category": "Code Quality",
+			"weight": 2
+		},
+		"namingConvention": {
+			"check": true,
+			"category": "Code Standards",
+			"weight": 3,
+			"selection": "CamelCase",
+			"options": [
+				{
+					"name": "CamelCase",
+					"regex": "(^[a-z]|[A-Z0-9])[a-z]*"
+				},
+				{
+					"name": "PascalCase",
+					"regex": ""
+				},
+				{
+					"name": "SnakeCase",
+					"regex": ""
+				},
+				{
+					"name": "MacroCase",
+					"regex": "[A-Z][A-Z0-9_]+"
+				}
+			]
+		},
+		"methodReturnType": {
+			"check": true,
+			"category": "Code Quality",
+			"weight": 2
+		},
+		"methodLOC": {
+			"check": true,
+			"category": "Code Quality",
+			"weight": 1,
+			"maxLineCount": 50
+		},
+		"methodArgumentType": {
+			"check": true,
+			"category": "Code Quality",
+			"weight": 2
+		},
+		"fieldType": {
+			"check": true,
+			"category": "Code Quality",
+			"weight": 2
+		},
+		"commentsForMethods": {
+			"check": false,
+			"category": "Code Standards",
+			"weight": 4,
+			"regex": "(\\/\\*[\\s\\S]*?\\*\\/|\\/\\/[\\s\\S]*?\\n)"
+		}
+	}
+}
